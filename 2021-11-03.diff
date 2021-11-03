@@ -1,0 +1,850 @@
+diff --git a/po/git.pot b/po/git.pot
+index 214d72a..94d1a98 100644
+--- a/po/git.pot
++++ b/po/git.pot
+@@ -7,7 +7,6 @@
+ msgid   ""
+ msgstr  "Project-Id-Version: PACKAGE VERSION\n"
+         "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
+-        "POT-Creation-Date: 2021-10-30 09:36+0800\n"
+         "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+         "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+         "Language-Team: LANGUAGE <LL@li.org>\n"
+@@ -1588,6 +1587,9 @@ msgstr  ""
+ msgid   "--all can't be combined with refspecs"
+ msgstr  ""
+ #
++msgid   "--all or <enlistment>, but not both"
++msgstr  ""
++#
+ msgid   "--anonymize-map token cannot be empty"
+ msgstr  ""
+ #
+@@ -1728,7 +1730,7 @@ msgid   "--format cannot be used when not listing"
+ msgstr  ""
+ #
+ #, c-format
+-msgid   "--format=%.*s cannot be used with--python, --shell, --tcl"
++msgid   "--format=%.*s cannot be used with --python, --shell, --tcl"
+ msgstr  ""
+ #
+ msgid   "--geometric is incompatible with -A, -a"
+@@ -1864,6 +1866,9 @@ msgstr  ""
+ msgid   "--pathspec-from-file is incompatible with --patch"
+ msgstr  ""
+ #
++msgid   "--pathspec-from-file is incompatible with --staged"
++msgstr  ""
++#
+ msgid   "--pathspec-from-file is incompatible with pathspec arguments"
+ msgstr  ""
+ #
+@@ -1911,6 +1916,9 @@ msgstr  ""
+ msgid   "--reject and --3way cannot be used together."
+ msgstr  ""
+ #
++msgid   "--remerge_diff does not make sense"
++msgstr  ""
++#
+ msgid   "--reschedule-failed-exec requires --exec or --interactive"
+ msgstr  ""
+ #
+@@ -2011,6 +2019,9 @@ msgstr  ""
+ msgid   "-A and -u are mutually incompatible"
+ msgstr  ""
+ #
++msgid   "-C requires a <directory>"
++msgstr  ""
++#
+ msgid   "-G and --pickaxe-regex are mutually exclusive, use --pickaxe-regex "
+         "with -S"
+ msgstr  ""
+@@ -2037,6 +2048,9 @@ msgstr  ""
+ msgid   "-c expects a configuration string\n"
+ msgstr  ""
+ #
++msgid   "-c requires a <key>=<value> argument"
++msgstr  ""
++#
+ msgid   "-d needs at least one argument"
+ msgstr  ""
+ #
+@@ -2818,6 +2832,9 @@ msgstr  ""
+ msgid   "Can't use --patch and --include-untracked or --all at the same time"
+ msgstr  ""
+ #
++msgid   "Can't use --staged and --include-untracked or --all at the same time"
++msgstr  ""
++#
+ #, sh-format
+ msgid   "Cannot $action: You have unstaged changes."
+ msgstr  ""
+@@ -2941,6 +2958,9 @@ msgstr  ""
+ msgid   "Cannot save the current index state"
+ msgstr  ""
+ #
++msgid   "Cannot save the current staged state"
++msgstr  ""
++#
+ msgid   "Cannot save the current status"
+ msgstr  ""
+ #
+@@ -3187,6 +3207,10 @@ msgstr  ""
+ msgid   "Could not create new root commit"
+ msgstr  ""
+ #
++msgid   "Could not create temporary object directory for core."
++        "fsyncobjectfiles=batch"
++msgstr  ""
++#
+ #, c-format
+ msgid   "Could not delete %s"
+ msgstr  ""
+@@ -3350,6 +3374,10 @@ msgstr  ""
+ msgid   "Couldn't look up commit object for HEAD"
+ msgstr  ""
+ #
++#, c-format
++msgid   "Couldn't start hook '%s'\n"
++msgstr  ""
++#
+ msgid   "Count unpacked number of objects and their disk consumption"
+ msgstr  ""
+ #
+@@ -4430,6 +4458,9 @@ msgstr  ""
+ msgid   "Marking reachable objects..."
+ msgstr  ""
+ #
++msgid   "Max seconds to wait for background daemon startup"
++msgstr  ""
++#
+ msgid   "Maybe you want to use 'update --init'?"
+ msgstr  ""
+ #
+@@ -4673,6 +4704,9 @@ msgstr  ""
+ msgid   "No remote-tracking branch for %s from %s"
+ msgstr  ""
+ #
++msgid   "No staged changes"
++msgstr  ""
++#
+ msgid   "No stash entries found."
+ msgstr  ""
+ #
+@@ -5367,6 +5401,9 @@ msgstr  ""
+ msgid   "Run a three-way file merge"
+ msgstr  ""
+ #
++msgid   "Run git hooks"
++msgstr  ""
++#
+ msgid   "Run merge conflict resolution tools to resolve merge conflicts"
+ msgstr  ""
+ #
+@@ -5394,6 +5431,9 @@ msgstr  ""
+ msgid   "Saved working directory and index state %s"
+ msgstr  ""
+ #
++msgid   "Scalar enlistments require a worktree"
++msgstr  ""
++#
+ msgid   "Scanning merged commits"
+ msgstr  ""
+ #
+@@ -5708,8 +5748,15 @@ msgid   "Submodule path '%s': rebased into '%s'\n"
+ msgstr  ""
+ #
+ #, c-format
+-msgid   "Submodule work tree '%s' contains a .git directory (use 'rm -rf' if "
+-        "you really want to remove it including all of its history)"
++msgid   "Submodule work tree '%s' contains a .git directory.\n"
++        "Use --force if you want to move its contents to superproject's "
++        "module directory and convert .git to a file and then proceed with "
++        "deinit."
++msgstr  ""
++#
++#, c-format
++msgid   "Submodule work tree '%s' contains a .git directory. This will be "
++        "replaced with a .git file by using absorbgitdirs."
+ msgstr  ""
+ #
+ #, c-format
+@@ -6294,6 +6341,10 @@ msgid   "Unexpected tail checksum for %s (disk corruption?)"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "Unhandled subcommand '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "Unimplemented pathspec magic '%c' in '%s'"
+ msgstr  ""
+ #
+@@ -7075,6 +7126,9 @@ msgid   "`batch-size` and `relogin` must be specified together (via command-"
+         "line or configuration option)\n"
+ msgstr  ""
+ #
++msgid   "`scalar list` does not take arguments"
++msgstr  ""
++#
+ #, c-format
+ msgid   "a %s revision is needed"
+ msgstr  ""
+@@ -7487,6 +7541,10 @@ msgstr  ""
+ msgid   "argument to --packfile must be a valid hash (got '%s')"
+ msgstr  ""
+ #
++#, c-format
++msgid   "asked to inherit tracking from %s, but could not find %s"
++msgstr  ""
++#
+ msgid   "attach the patch"
+ msgstr  ""
+ #
+@@ -7847,6 +7905,9 @@ msgstr  ""
+ msgid   "branch of repository to add as submodule"
+ msgstr  ""
+ #
++msgid   "branch to checkout after clone"
++msgstr  ""
++#
+ msgid   "branch(es) to track"
+ msgstr  ""
+ #
+@@ -8051,6 +8112,10 @@ msgid   "cannot create configuration file %s"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "cannot deduce worktree name from '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "cannot deflate request; zlib deflate error %d"
+ msgstr  ""
+ #
+@@ -8710,7 +8775,7 @@ msgstr  ""
+ msgid   "configuration fetch.output contains invalid value %s"
+ msgstr  ""
+ #
+-msgid   "conflict style (merge or diff3)"
++msgid   "conflict style (merge, diff3, or zdiff3)"
+ msgstr  ""
+ #
+ msgid   "conflicted"
+@@ -8762,6 +8827,9 @@ msgstr  ""
+ msgid   "control the order in which files appear in the output"
+ msgstr  ""
+ #
++msgid   "control use of pre-merge-commit and commit-msg hooks"
++msgstr  ""
++#
+ msgid   "convert <from> to <to> in anonymized output"
+ msgstr  ""
+ #
+@@ -8793,8 +8861,8 @@ msgid   "core.fsmonitor is set; remove it if you really want to disable "
+         "fsmonitor"
+ msgstr  ""
+ #
+-msgid   "core.fsmonitor is unset; set it if you really want to enable "
+-        "fsmonitor"
++msgid   "core.fsmonitor is unset; set it if you really want to enable the "
++        "hook-based fsmonitor"
+ msgstr  ""
+ #
+ msgid   "core.splitIndex is set to false; remove or change it, if you really "
+@@ -8813,6 +8881,14 @@ msgid   "core.untrackedCache is set to true; remove or change it, if you "
+         "really want to disable the untracked cache"
+ msgstr  ""
+ #
++msgid   "core.useBuiltinFSMonitor is set; remove it if you really want to "
++        "disable fsmonitor"
++msgstr  ""
++#
++msgid   "core.useBuiltinFSMonitor is unset; set it if you really want to "
++        "enable the builtin fsmonitor"
++msgstr  ""
++#
+ msgid   "corrupt MERGE_RR"
+ msgstr  ""
+ #
+@@ -8854,6 +8930,10 @@ msgid   "could not apply %s... %s"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "could not change to '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "could not check out original HEAD '%s'. Try 'git bisect reset "
+         "<commit>'."
+ msgstr  ""
+@@ -8869,6 +8949,24 @@ msgid   "could not commit staged changes."
+ msgstr  ""
+ #
+ #, c-format
++msgid   "could not configure %s=%s"
++msgstr  ""
++#
++#, c-format
++msgid   "could not configure '%s'"
++msgstr  ""
++#
++msgid   "could not configure for full clone"
++msgstr  ""
++#
++msgid   "could not configure log.excludeDecoration"
++msgstr  ""
++#
++#, c-format
++msgid   "could not configure remote in '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "could not convert the following graft(s):\n"
+         "%s"
+ msgstr  ""
+@@ -8898,6 +8996,10 @@ msgid   "could not create file '%s'"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "could not create fsmonitor cookie '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "could not create leading directories for '%s'"
+ msgstr  ""
+ #
+@@ -8978,6 +9080,9 @@ msgstr  ""
+ msgid   "could not find commit from NOTES_MERGE_PARTIAL."
+ msgstr  ""
+ #
++msgid   "could not find enlistment root"
++msgstr  ""
++#
+ msgid   "could not find exact merge base"
+ msgstr  ""
+ #
+@@ -9030,6 +9135,9 @@ msgstr  ""
+ msgid   "could not get type of object %s in pack %s"
+ msgstr  ""
+ #
++msgid   "could not initialize listener thread"
++msgstr  ""
++#
+ msgid   "could not load pack"
+ msgstr  ""
+ #
+@@ -9203,6 +9311,9 @@ msgstr  ""
+ msgid   "could not parse transport.color.* config"
+ msgstr  ""
+ #
++msgid   "could not query fsmonitor--daemon"
++msgstr  ""
++#
+ #, c-format
+ msgid   "could not read '%s'"
+ msgstr  ""
+@@ -9299,6 +9410,10 @@ msgid   "could not read tagged object '%s'"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "could not recreate objdir %s"
++msgstr  ""
++#
++#, c-format
+ msgid   "could not recurse into submodule '%s'"
+ msgstr  ""
+ #
+@@ -9407,6 +9522,10 @@ msgstr  ""
+ msgid   "could not start 'git status' in submodule '%s'"
+ msgstr  ""
+ #
++#, c-format
++msgid   "could not start IPC thread pool on '%s'"
++msgstr  ""
++#
+ msgid   "could not start `log`"
+ msgstr  ""
+ #
+@@ -9414,6 +9533,9 @@ msgstr  ""
+ msgid   "could not start accept_thread '%s'"
+ msgstr  ""
+ #
++msgid   "could not start fsmonitor listener thread"
++msgstr  ""
++#
+ msgid   "could not start ls-files in .."
+ msgstr  ""
+ #
+@@ -9448,6 +9570,10 @@ msgid   "could not switch to %s"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "could not switch to '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "could not unlink: %s"
+ msgstr  ""
+ #
+@@ -9815,6 +9941,10 @@ msgid   "directory '%s' contains untracked files, but is not in the sparse-"
+         "checkout cone"
+ msgstr  ""
+ #
++#, c-format
++msgid   "directory '%s' exists already"
++msgstr  ""
++#
+ msgid   "directory from which templates will be used"
+ msgstr  ""
+ #
+@@ -10551,6 +10681,9 @@ msgstr  ""
+ msgid   "failed to delete directory %s"
+ msgstr  ""
+ #
++msgid   "failed to delete enlistment directory"
++msgstr  ""
++#
+ #, c-format
+ msgid   "failed to delete file %s"
+ msgstr  ""
+@@ -10609,6 +10742,16 @@ msgstr  ""
+ msgid   "failed to generate diff"
+ msgstr  ""
+ #
++#, c-format
++msgid   "failed to get default branch for '%s'"
++msgstr  ""
++#
++msgid   "failed to get default branch name"
++msgstr  ""
++#
++msgid   "failed to get default branch name from remote; using local default"
++msgstr  ""
++#
+ msgid   "failed to get kernel name and information"
+ msgstr  ""
+ #
+@@ -10879,6 +11022,9 @@ msgstr  ""
+ msgid   "failed to unpack trees"
+ msgstr  ""
+ #
++msgid   "failed to unregister repository"
++msgstr  ""
++#
+ #, c-format
+ msgid   "failed to update conflicted state in '%s'"
+ msgstr  ""
+@@ -10948,9 +11094,7 @@ msgid   "fatal: $program_name cannot be used without a working tree."
+ msgstr  ""
+ #
+ #, perl-format
+-msgid   "fatal: %s: rejected by sendemail-validate hook\n"
+-        "%s\n"
+-        "warning: no patches were sent\n"
++msgid   "fatal: %s: rejected by %s hook\n"
+ msgstr  ""
+ #
+ #, perl-format
+@@ -11225,6 +11369,9 @@ msgid_plural    "found %u common ancestors:"
+ msgstr[0]       ""
+ msgstr[1]       ""
+ #
++msgid   "free console"
++msgstr  ""
++#
+ msgid   "frequency"
+ msgstr  ""
+ #
+@@ -11246,6 +11393,29 @@ msgstr  ""
+ msgid   "fsmonitor enabled"
+ msgstr  ""
+ #
++msgid   "fsmonitor--daemon not supported on this platform"
++msgstr  ""
++#
++#, c-format
++msgid   "fsmonitor-daemon is not watching '%s'\n"
++msgstr  ""
++#
++#, c-format
++msgid   "fsmonitor-daemon is watching '%s'\n"
++msgstr  ""
++#
++#, c-format
++msgid   "fsmonitor: cookie_result '%d' != SEEN"
++msgstr  ""
++#
++#, c-format
++msgid   "fsmonitor_ipc__send_query: invalid path '%s'"
++msgstr  ""
++#
++#, c-format
++msgid   "fsmonitor_ipc__send_query: unspecified error on '%s'"
++msgstr  ""
++#
+ #, c-format
+ msgid   "fstat on %s failed"
+ msgstr  ""
+@@ -11655,6 +11825,18 @@ msgstr  ""
+ msgid   "git fsck [<options>] [<object>...]"
+ msgstr  ""
+ #
++msgid   "git fsmonitor--daemon run [<options>]"
++msgstr  ""
++#
++msgid   "git fsmonitor--daemon start [<options>]"
++msgstr  ""
++#
++msgid   "git fsmonitor--daemon status"
++msgstr  ""
++#
++msgid   "git fsmonitor--daemon stop"
++msgstr  ""
++#
+ msgid   "git gc [<options>]"
+ msgstr  ""
+ #
+@@ -11678,6 +11860,9 @@ msgstr  ""
+ msgid   "git help [-g|--guides]"
+ msgstr  ""
+ #
++msgid   "git hook run [--ignore-missing] <hook-name> [-- <hook-args>]"
++msgstr  ""
++#
+ msgid   "git init [-q | --quiet] [--bare] [--template=<template-directory>] "
+         "[--shared[=<permissions>]] [<directory>]"
+ msgstr  ""
+@@ -11995,6 +12180,10 @@ msgstr  ""
+ msgid   "git replace [-f] <object> <replacement>"
+ msgstr  ""
+ #
++#, c-format
++msgid   "git repository gone in '%s'"
++msgstr  ""
++#
+ msgid   "git rerere [clear | forget <path>... | status | remaining | diff | "
+         "gc]"
+ msgstr  ""
+@@ -12098,16 +12287,17 @@ msgstr  ""
+ msgid   "git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]"
+ msgstr  ""
+ #
+-msgid   "git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]\n"
++msgid   "git stash [push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-"
++        "q|--quiet]\n"
+         "          [-u|--include-untracked] [-a|--all] [-m|--message "
+         "<message>]\n"
++        "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
+         "          [--] [<pathspec>...]]"
+ msgstr  ""
+ #
+ msgid   "git stash [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]\n"
+         "          [-u|--include-untracked] [-a|--all] [-m|--message "
+         "<message>]\n"
+-        "          [--pathspec-from-file=<file> [--pathspec-file-nul]]\n"
+         "          [--] [<pathspec>...]]"
+ msgstr  ""
+ #
+@@ -12129,12 +12319,13 @@ msgstr  ""
+ msgid   "git stash pop [--index] [-q|--quiet] [<stash>]"
+ msgstr  ""
+ #
+-msgid   "git stash save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]\n"
+-        "               [-u|--include-untracked] [-a|--all] [<message>]"
++msgid   "git stash save [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-"
++        "q|--quiet]\n"
++        "          [-u|--include-untracked] [-a|--all] [<message>]"
+ msgstr  ""
+ #
+ msgid   "git stash save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]\n"
+-        "          [-u|--include-untracked] [-a|--all] [<message>]"
++        "               [-u|--include-untracked] [-a|--all] [<message>]"
+ msgstr  ""
+ #
+ msgid   "git stash show [<options>] [<stash>]"
+@@ -12372,7 +12563,7 @@ msgid   "gpg.ssh.defaultKeyCommand failed: %s %s"
+ msgstr  ""
+ #
+ #, c-format
+-msgid   "gpg.ssh.defaultKeycommand succeeded but returned no keys: %s %s"
++msgid   "gpg.ssh.defaultKeyCommand succeeded but returned no keys: %s %s"
+ msgstr  ""
+ #
+ #, c-format
+@@ -12678,6 +12869,12 @@ msgstr  ""
+ msgid   "in unpopulated submodule '%s'"
+ msgstr  ""
+ #
++msgid   "include Git version"
++msgstr  ""
++#
++msgid   "include Git's build options"
++msgstr  ""
++#
+ msgid   "include all commits already in the commit-graph file"
+ msgstr  ""
+ #
+@@ -12843,6 +13040,10 @@ msgid   "invalid '..' path segment"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "invalid 'ipc-threads' value (%d)"
++msgstr  ""
++#
++#, c-format
+ msgid   "invalid --decorate option: %s"
+ msgstr  ""
+ #
+@@ -13864,6 +14065,9 @@ msgstr  ""
+ msgid   "need a repository to verify a bundle"
+ msgstr  ""
+ #
++msgid   "need a working directory"
++msgstr  ""
++#
+ msgid   "need exactly one range"
+ msgstr  ""
+ #
+@@ -14107,6 +14311,10 @@ msgid   "no such section: %s"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "no such task: '%s'"
++msgstr  ""
++#
++#, c-format
+ msgid   "no tag exactly matches '%s'"
+ msgstr  ""
+ #
+@@ -14241,6 +14449,9 @@ msgstr  ""
+ msgid   "not in a git directory"
+ msgstr  ""
+ #
++msgid   "not on a branch to use --set-upstream with"
++msgstr  ""
++#
+ #, c-format
+ msgid   "not removing '%s' recursively without -r"
+ msgstr  ""
+@@ -14472,6 +14683,9 @@ msgstr  ""
+ msgid   "only decorate refs that match <pattern>"
+ msgstr  ""
+ #
++msgid   "only download metadata for the branch that will be checked out"
++msgstr  ""
++#
+ msgid   "only emit output related to the first range"
+ msgstr  ""
+ #
+@@ -14570,6 +14784,10 @@ msgid   "option `%s' expects \"always\", \"auto\", or \"never\""
+ msgstr  ""
+ #
+ #, c-format
++msgid   "option `%s' expects \"direct\" or \"inherit\""
++msgstr  ""
++#
++#, c-format
+ msgid   "option `%s' expects a number greater than zero"
+ msgstr  ""
+ #
+@@ -14785,6 +15003,9 @@ msgstr  ""
+ msgid   "parse_object_buffer failed on %s for %s"
+ msgstr  ""
+ #
++msgid   "partial clone failed; attempting full clone"
++msgstr  ""
++#
+ msgid   "pass --delta-islands to git-pack-objects"
+ msgstr  ""
+ #
+@@ -15462,6 +15683,9 @@ msgstr  ""
+ msgid   "recode into utf8 (default)"
+ msgstr  ""
+ #
++msgid   "reconfigure all registered enlistments"
++msgstr  ""
++#
+ msgid   "record only the fact that removed paths will be added later"
+ msgstr  ""
+ #
+@@ -15568,6 +15792,9 @@ msgstr  ""
+ msgid   "refusing to create/use '%s' in another submodule's git dir"
+ msgstr  ""
+ #
++msgid   "refusing to delete current working directory"
++msgstr  ""
++#
+ #, c-format
+ msgid   "refusing to lose untracked file at '%s'"
+ msgstr  ""
+@@ -15618,6 +15845,10 @@ msgstr  ""
+ msgid   "remote %s already exists."
+ msgstr  ""
+ #
++#, c-format
++msgid   "remote HEAD is not a branch: '%.*s'"
++msgstr  ""
++#
+ msgid   "remote HEAD refers to nonexistent ref, unable to checkout.\n"
+ msgstr  ""
+ #
+@@ -16014,6 +16245,10 @@ msgid   "running %s\n"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "running fsmonitor-daemon in '%s'\n"
++msgstr  ""
++#
++#, c-format
+ msgid   "running trailer command '%s' failed"
+ msgstr  ""
+ #
+@@ -16026,6 +16261,33 @@ msgstr  ""
+ msgid   "same as the above, but limit memory size instead of entries count"
+ msgstr  ""
+ #
++msgid   "scalar [-C <directory>] [-c <key>=<value>] <command> [<options>]\n"
++        "\n"
++        "Commands:\n"
++msgstr  ""
++#
++msgid   "scalar clone [<options>] [--] <repo> [<dir>]"
++msgstr  ""
++#
++msgid   "scalar delete <enlistment>"
++msgstr  ""
++#
++msgid   "scalar reconfigure [--all | <enlistment>]"
++msgstr  ""
++#
++msgid   "scalar register [<enlistment>]"
++msgstr  ""
++#
++msgid   "scalar run <task> [<enlistment>]\n"
++        "Tasks:\n"
++msgstr  ""
++#
++msgid   "scalar unregister [<enlistment>]"
++msgstr  ""
++#
++msgid   "scalar verbose [-v | --verbose] [--build-options]"
++msgstr  ""
++#
+ msgid   "scan pack-indexes listed by stdin for commits"
+ msgstr  ""
+ #
+@@ -16169,9 +16431,6 @@ msgstr  ""
+ msgid   "set upstream for git pull/status"
+ msgstr  ""
+ #
+-msgid   "set upstream info for new branch"
+-msgstr  ""
+-#
+ msgid   "sets the submodule’s name to the given string instead of defaulting "
+         "to its path"
+ msgstr  ""
+@@ -16548,6 +16807,9 @@ msgstr  ""
+ msgid   "signature"
+ msgstr  ""
+ #
++msgid   "silently ignore missing requested <hook-name>"
++msgstr  ""
++#
+ msgid   "similar to --all-progress when progress meter is shown"
+ msgstr  ""
+ #
+@@ -16733,6 +16995,10 @@ msgstr  ""
+ msgid   "start walk at commits listed by stdin"
+ msgstr  ""
+ #
++#, c-format
++msgid   "starting fsmonitor-daemon in '%s'\n"
++msgstr  ""
++#
+ msgid   "stash failed"
+ msgstr  ""
+ #
+@@ -16742,6 +17008,9 @@ msgstr  ""
+ msgid   "stash message"
+ msgstr  ""
+ #
++msgid   "stash staged changes only"
++msgstr  ""
++#
+ #. TRANSLATORS: please do not translate the command names
+ #. 'status', 'update', 'revert', etc.
+ msgid   "status        - show paths with changes\n"
+@@ -16984,6 +17253,12 @@ msgstr  ""
+ msgid   "test if the filesystem supports untracked cache"
+ msgstr  ""
+ #
++msgid   "test-helper fsmonitor-client flush"
++msgstr  ""
++#
++msgid   "test-helper fsmonitor-client query [<token>]"
++msgstr  ""
++#
+ msgid   "test-helper simple-ipc is-active    [<name>] [<options>]"
+ msgstr  ""
+ #
+@@ -17386,6 +17661,9 @@ msgstr  ""
+ msgid   "unable to create temporary index"
+ msgstr  ""
+ #
++msgid   "unable to create temporary object directory"
++msgstr  ""
++#
+ #, c-format
+ msgid   "unable to create thread: %s"
+ msgstr  ""
+@@ -17680,7 +17958,7 @@ msgid   "unable to remove %s from index"
+ msgstr  ""
+ #
+ #, c-format
+-msgid   "unable to rename temporary '*.%s' file to '%s"
++msgid   "unable to rename temporary '*.%s' file to '%s'"
+ msgstr  ""
+ #
+ #, c-format
+@@ -18365,6 +18643,9 @@ msgstr  ""
+ msgid   "use <n> digits to display object names"
+ msgstr  ""
+ #
++msgid   "use <n> ipc worker threads"
++msgstr  ""
++#
+ msgid   "use <n> worker threads"
+ msgstr  ""
+ #
+@@ -18416,6 +18697,9 @@ msgstr  ""
+ msgid   "use a specific path for --textconv/--filters"
+ msgstr  ""
+ #
++msgid   "use a zealous diff3 based merge"
++msgstr  ""
++#
+ msgid   "use another key to sign the tag"
+ msgstr  ""
+ #
+@@ -18615,6 +18899,10 @@ msgid   "value is given this type"
+ msgstr  ""
+ #
+ #, c-format
++msgid   "value of '%s' out of range: %d"
++msgstr  ""
++#
++#, c-format
+ msgid   "value of uploadpack.blobpackfileuri must be of the form '<object-"
+         "hash> <pack-hash> <uri>' (got '%s')"
+ msgstr  ""
+@@ -18675,6 +18963,9 @@ msgstr  ""
+ msgid   "when"
+ msgstr  ""
+ #
++msgid   "when cloning, create full working directory"
++msgstr  ""
++#
+ msgid   "when creating files, prepend <string>"
+ msgstr  ""
+ #
