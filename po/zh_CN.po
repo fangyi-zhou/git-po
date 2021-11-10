@@ -143,7 +143,7 @@ msgstr ""
 "Project-Id-Version: Git\n"
 "Report-Msgid-Bugs-To: Git Mailing List <git@vger.kernel.org>\n"
 "POT-Creation-Date: 2021-11-10 08:55+0800\n"
-"PO-Revision-Date: 2021-11-10 12:16+0000\n"
+"PO-Revision-Date: 2021-11-10 12:28+0000\n"
 "Last-Translator: Fangyi Zhou <me@fangyi.io>\n"
 "Language-Team: GitHub <https://github.com/jiangxin/git/>\n"
 "Language: zh_CN\n"
@@ -969,7 +969,7 @@ msgstr ""
 "注意：正在切换到 '%s'。\n"
 "\n"
 "您正处于分离头指针状态。您可以查看、做试验性的修改及提交，并且您可以在切换\n"
-"回一个分支时，丢弃在此状态下所做的提交而不对分支造成影响。\n"
+"回分支时，丢弃在此状态下所做的提交而不对分支造成影响。\n"
 "\n"
 "如果您想要通过创建分支来保留在此状态下所做的提交，您可以通过在 switch 命令\n"
 "中添加参数 -c 来实现（现在或稍后）。例如：\n"
@@ -1007,15 +1007,15 @@ msgstr "--reject 和 --3way 不能同时使用。"
 
 #: apply.c:139
 msgid "--3way outside a repository"
-msgstr "--3way 在一个仓库之外"
+msgstr "--3way 在仓库之外"
 
 #: apply.c:150
 msgid "--index outside a repository"
-msgstr "--index 在一个仓库之外"
+msgstr "--index 在仓库之外"
 
 #: apply.c:153
 msgid "--cached outside a repository"
-msgstr "--cached 在一个仓库之外"
+msgstr "--cached 在仓库之外"
 
 #: apply.c:800
 #, c-format
@@ -1175,7 +1175,7 @@ msgstr "缺失 '%s' 的二进制补丁数据"
 #: apply.c:3105
 #, c-format
 msgid "cannot reverse-apply a binary patch without the reverse hunk to '%s'"
-msgstr "不能反向应用一个缺少到 '%s' 的反向数据块的二进制补丁"
+msgstr "不能反向应用缺少到 '%s' 的反向数据块的二进制补丁"
 
 #: apply.c:3152
 #, c-format
@@ -1540,7 +1540,7 @@ msgstr "尝试三路合并，如果失败则回落至正常补丁模式"
 
 #: apply.c:5051
 msgid "build a temporary index based on embedded index information"
-msgstr "创建一个临时索引基于嵌入的索引信息"
+msgstr "基于嵌入的索引信息创建临时索引"
 
 #: apply.c:5054 builtin/checkout-index.c:196
 msgid "paths are separated with NUL character"
@@ -1690,12 +1690,12 @@ msgstr "无此引用：%.*s"
 #: archive.c:456
 #, c-format
 msgid "not a valid object name: %s"
-msgstr "不是一个有效的对象名：%s"
+msgstr "不是有效的对象名：%s"
 
 #: archive.c:469
 #, c-format
 msgid "not a tree object: %s"
-msgstr "不是一个树对象：%s"
+msgstr "不是树对象：%s"
 
 #: archive.c:481
 msgid "current working directory is untracked"
@@ -1709,7 +1709,7 @@ msgstr "文件未找到：%s"
 #: archive.c:524
 #, c-format
 msgid "Not a regular file: %s"
-msgstr "不是一个常规文件：%s"
+msgstr "不是常规文件：%s"
 
 #: archive.c:551
 msgid "fmt"
@@ -1807,7 +1807,7 @@ msgstr "参数不支持此格式 '%s'：-%d"
 #: attr.c:203
 #, c-format
 msgid "%.*s is not a valid attribute name"
-msgstr "%.*s 不是一个有效的属性名"
+msgstr "%.*s 不是有效的属性名"
 
 #: attr.c:364
 #, c-format
@@ -1835,7 +1835,7 @@ msgstr "我们无法进行更多的二分查找！\n"
 #: bisect.c:764
 #, c-format
 msgid "Not a valid commit name %s"
-msgstr "不是一个有效的提交名 %s"
+msgstr "不是有效的提交名 %s"
 
 #: bisect.c:789
 #, c-format
@@ -2046,12 +2046,12 @@ msgstr "未跟踪：引用 %s 有歧义"
 #: branch.c:189
 #, c-format
 msgid "'%s' is not a valid branch name."
-msgstr "'%s' 不是一个有效的分支名称。"
+msgstr "'%s' 不是有效的分支名称。"
 
 #: branch.c:208
 #, c-format
 msgid "A branch named '%s' already exists."
-msgstr "一个分支名 '%s' 已经存在。"
+msgstr "名为 '%s' 的分支已经存在。"
 
 #: branch.c:213
 msgid "Cannot force update the current branch."
@@ -2060,7 +2060,7 @@ msgstr "无法强制更新当前分支。"
 #: branch.c:233
 #, c-format
 msgid "Cannot setup tracking information; starting point '%s' is not a branch."
-msgstr "无法设置跟踪信息；起始点 '%s' 不是一个分支。"
+msgstr "无法设置跟踪信息；起始点 '%s' 不是分支。"
 
 #: branch.c:235
 #, c-format
@@ -2079,16 +2079,16 @@ msgid ""
 "\"git push -u\" to set the upstream config as you push."
 msgstr ""
 "\n"
-"如果您正计划基于远程一个现存的上游分支开始您的工作，\n"
+"如果您正计划基于现存于远程的上游分支开始您的工作，\n"
 "您可能需要执行 \"git fetch\" 来获取分支。\n"
 "\n"
-"如果您正计划推送一个能与对应远程分支建立跟踪的新的本地分支，\n"
+"如果您正计划推送能与对应远程分支建立跟踪的新的本地分支，\n"
 "您可能需要使用 \"git push -u\" 推送分支并配置和上游的关联。"
 
 #: branch.c:281
 #, c-format
 msgid "Not a valid object name: '%s'."
-msgstr "不是一个有效的对象名：'%s'。"
+msgstr "不是有效的对象名：'%s'。"
 
 #: branch.c:301
 #, c-format
@@ -2123,7 +2123,7 @@ msgstr "未知能力 '%s'"
 #: bundle.c:74
 #, c-format
 msgid "'%s' does not look like a v2 or v3 bundle file"
-msgstr "'%s' 不像是一个 v2 或 v3 版本的归档包文件"
+msgstr "'%s' 不像是 v2 或 v3 版本的归档包文件"
 
 #: bundle.c:113
 #, c-format
@@ -2142,7 +2142,7 @@ msgstr "仓库中缺少这些必备的提交："
 
 #: bundle.c:201
 msgid "need a repository to verify a bundle"
-msgstr "需要一个仓库来校验一个归档包"
+msgstr "需要一个仓库来校验归档包"
 
 #: bundle.c:257
 #, c-format
@@ -2153,7 +2153,7 @@ msgstr[1] "这个归档包中含有 %d 个引用："
 
 #: bundle.c:264
 msgid "The bundle records a complete history."
-msgstr "这个归档包记录一个完整历史。"
+msgstr "这个归档包记录完整历史。"
 
 #: bundle.c:266
 #, c-format
@@ -2270,7 +2270,7 @@ msgstr "提交图形链不匹配"
 #: commit-graph.c:540
 #, c-format
 msgid "invalid commit-graph chain: line '%s' not a hash"
-msgstr "无效的提交图形链：行 '%s' 不是一个哈希值"
+msgstr "无效的提交图形链：行 '%s' 不是哈希值"
 
 #: commit-graph.c:564
 msgid "unable to find all commit-graph files"
@@ -2484,7 +2484,7 @@ msgstr "不能解析 %s"
 #: commit.c:55
 #, c-format
 msgid "%s %s is not a commit!"
-msgstr "%s %s 不是一个提交！"
+msgstr "%s %s 不是提交！"
 
 #: commit.c:196
 msgid ""
@@ -2509,12 +2509,12 @@ msgstr ""
 #: commit.c:1239
 #, c-format
 msgid "Commit %s has an untrusted GPG signature, allegedly by %s."
-msgstr "提交 %s 有一个非可信的声称来自 %s 的 GPG 签名。"
+msgstr "提交 %s 有非可信的声称来自 %s 的 GPG 签名。"
 
 #: commit.c:1243
 #, c-format
 msgid "Commit %s has a bad GPG signature allegedly by %s."
-msgstr "提交 %s 有一个错误的声称来自 %s 的 GPG 签名。"
+msgstr "提交 %s 有错误的声称来自 %s 的 GPG 签名。"
 
 #: commit.c:1246
 #, c-format
@@ -2524,7 +2524,7 @@ msgstr "提交 %s 没有 GPG 签名。"
 #: commit.c:1249
 #, c-format
 msgid "Commit %s has a good GPG signature by %s\n"
-msgstr "提交 %s 有一个来自 %s 的好的 GPG 签名。\n"
+msgstr "提交 %s 有来自 %s 的好的 GPG 签名。\n"
 
 #: commit.c:1503
 msgid ""
@@ -2586,7 +2586,7 @@ msgstr "缺少环境变量 '%s' 于配置 '%.*s' "
 #: config.c:443
 #, c-format
 msgid "key does not contain a section: %s"
-msgstr "键名没有包含一个小节名称：%s"
+msgstr "键名没有包含小节名称：%s"
 
 #: config.c:448
 #, c-format
@@ -2723,7 +2723,7 @@ msgstr "无法扩展用户目录：'%s'"
 #: config.c:1268
 #, c-format
 msgid "'%s' for '%s' is not a valid timestamp"
-msgstr "'%2$s' 的值 '%1$s' 不是一个有效的时间戳"
+msgstr "'%2$s' 的值 '%1$s' 不是有效的时间戳"
 
 #: config.c:1361
 #, c-format
@@ -2771,7 +2771,7 @@ msgstr "无法从数据对象 '%s' 加载配置"
 #: config.c:1795
 #, c-format
 msgid "reference '%s' does not point to a blob"
-msgstr "引用 '%s' 没有指向一个数据对象"
+msgstr "引用 '%s' 没有指向数据对象"
 
 #: config.c:1813
 #, c-format
@@ -2913,7 +2913,7 @@ msgstr "服务器不支持特性 '%s'"
 
 #: connect.c:129
 msgid "expected flush after capabilities"
-msgstr "在能力之后应为一个 flush 包"
+msgstr "在能力之后应为 flush 包"
 
 #: connect.c:265
 #, c-format
@@ -2954,7 +2954,7 @@ msgstr "无效的 ls-refs 响应：%s"
 
 #: connect.c:532
 msgid "expected flush after ref listing"
-msgstr "在引用列表之后应该有一个 flush 包"
+msgstr "在引用列表之后应该有 flush 包"
 
 #: connect.c:535
 msgid "expected response end packet after ref listing"
@@ -3116,8 +3116,7 @@ msgstr "如果使用 %2$s 编码，禁止在 '%1$s' 中使用 BOM"
 msgid ""
 "The file '%s' contains a byte order mark (BOM). Please use UTF-%.*s as "
 "working-tree-encoding."
-msgstr ""
-"文件 '%s' 包含一个字节顺序标记（BOM）。请使用 UTF-%.*s 作为工作区编码。"
+msgstr "文件 '%s' 包含字节顺序标记（BOM）。请使用 UTF-%.*s 作为工作区编码。"
 
 #: convert.c:293
 #, c-format
@@ -3130,8 +3129,8 @@ msgid ""
 "The file '%s' is missing a byte order mark (BOM). Please use UTF-%sBE or UTF-"
 "%sLE (depending on the byte order) as working-tree-encoding."
 msgstr ""
-"文件 '%s' 缺失一个字节顺序标记（BOM）。请使用 UTF-%sBE or UTF-%sLE（取决于字"
-"节序）作为工作区编码。"
+"文件 '%s' 缺失字节顺序标记（BOM）。请使用 UTF-%sBE or UTF-%sLE（取决于字节"
+"序）作为工作区编码。"
 
 #: convert.c:408 convert.c:479
 #, c-format
@@ -3438,7 +3437,7 @@ msgstr "无效的 --stat 值：%s"
 #: parse-options.c:217 parse-options.c:221
 #, c-format
 msgid "%s expects a numerical value"
-msgstr "%s 期望一个数字值"
+msgstr "%s 期望数字值"
 
 #: diff.c:4815
 #, c-format
@@ -3472,7 +3471,7 @@ msgstr "%s 期望 <n>/<m> 格式"
 #: diff.c:5006
 #, c-format
 msgid "%s expects a character, got '%s'"
-msgstr "%s 期望一个字符，得到 '%s'"
+msgstr "%s 期望字符，得到 '%s'"
 
 #: diff.c:5027
 #, c-format
@@ -3790,7 +3789,7 @@ msgstr "<算法>"
 
 #: diff.c:5568
 msgid "choose a diff algorithm"
-msgstr "选择一个差异算法"
+msgstr "选择差异算法"
 
 #: diff.c:5570
 msgid "<text>"
@@ -3850,7 +3849,7 @@ msgstr "禁用本程序的所有输出"
 
 #: diff.c:5603
 msgid "allow an external diff helper to be executed"
-msgstr "允许执行一个外置的差异助手"
+msgstr "允许执行外置的差异助手"
 
 #: diff.c:5605
 msgid "run external text conversion filters when comparing binary files"
@@ -3944,7 +3943,7 @@ msgstr "<文件>"
 
 #: diff.c:5648
 msgid "Output to a specific file"
-msgstr "输出到一个指定的文件"
+msgstr "输出到指定的文件"
 
 #: diff.c:6306
 msgid "exhaustive rename detection was skipped due to too many files."
@@ -4069,7 +4068,7 @@ msgstr "git fetch-pack：应为 shallow 列表"
 
 #: fetch-pack.c:196
 msgid "git fetch-pack: expected a flush packet after shallow list"
-msgstr "git fetch-pack：在浅克隆列表之后期望一个 flush 包"
+msgstr "git fetch-pack：在浅克隆列表之后期望 flush 包"
 
 #: fetch-pack.c:207
 msgid "git fetch-pack: expected ACK/NAK, got a flush packet"
@@ -4522,13 +4521,13 @@ msgid ""
 "'%s' appears to be a git command, but we were not\n"
 "able to execute it. Maybe git-%s is broken?"
 msgstr ""
-"'%s' 像是一个 git 命令，但却无法运行。\n"
+"'%s' 像是 git 命令，但却无法运行。\n"
 "可能是 git-%s 受损？"
 
 #: help.c:565 help.c:662
 #, c-format
 msgid "git: '%s' is not a git command. See 'git --help'."
-msgstr "git：'%s' 不是一个 git 命令。参见 'git --help'。"
+msgstr "git：'%s' 不是 git 命令。参见 'git --help'。"
 
 #: help.c:613
 msgid "Uh oh. Your system reports no Git commands at all."
@@ -4537,7 +4536,7 @@ msgstr "唉呀，您的系统中未发现 Git 命令。"
 #: help.c:635
 #, c-format
 msgid "WARNING: You called a Git command named '%s', which does not exist."
-msgstr "警告：您运行了一个并不存在的 Git 命令 '%s'。"
+msgstr "警告：您运行了并不存在的 Git 命令 '%s'。"
 
 #: help.c:640
 #, c-format
@@ -4714,12 +4713,12 @@ msgstr "无法解析 %s 中的稀疏过滤器数据"
 #: list-objects.c:127
 #, c-format
 msgid "entry '%s' in tree %s has tree mode, but is not a tree"
-msgstr "树 %2$s 中的条目 '%1$s' 具有树的模式，但不是一个树对象"
+msgstr "树 %2$s 中的条目 '%1$s' 具有树的模式，但不是树对象"
 
 #: list-objects.c:140
 #, c-format
 msgid "entry '%s' in tree %s has blob mode, but is not a blob"
-msgstr "树 %2$s 中的条目 '%1$s' 具有数据对象的模式，但不是一个数据对象"
+msgstr "树 %2$s 中的条目 '%1$s' 具有数据对象的模式，但不是数据对象"
 
 #: list-objects.c:398
 #, c-format
@@ -4740,7 +4739,7 @@ msgstr ""
 "无法创建 '%s.lock'：%s。\n"
 "\n"
 "似乎另外一个 git 进程在这个仓库中运行，例如：'git commit' 命令打\n"
-"开了一个编辑器。请确认所有进程都已经关闭然后重试。如果仍然报错，\n"
+"开的编辑器。请确认所有进程都已经关闭然后重试。如果仍然报错，\n"
 "可能之前有一个 git 进程在这个仓库中异常退出：\n"
 "手动删除这个文件再继续。"
 
@@ -4761,7 +4760,7 @@ msgstr "意外的行：'%s'"
 
 #: ls-refs.c:178
 msgid "expected flush after ls-refs arguments"
-msgstr "在 ls-refs 参数后应该有一个 flush 包"
+msgstr "在 ls-refs 参数后应该有 flush 包"
 
 #: mailinfo.c:1050
 msgid "quoted CRLF detected"
@@ -4803,7 +4802,7 @@ msgid ""
 "Failed to merge submodule %s, but a possible merge resolution exists:\n"
 "%s\n"
 msgstr ""
-"无法合并子模组 %s，但是存在一个可能的合并方案：\n"
+"无法合并子模组 %s，但是存在可能的合并方案：\n"
 "%s\n"
 
 #: merge-ort.c:1653 merge-recursive.c:1281
@@ -5051,7 +5050,7 @@ msgstr "删除 %s 以便为子目录留出空间\n"
 
 #: merge-recursive.c:906 merge-recursive.c:925
 msgid ": perhaps a D/F conflict?"
-msgstr "：可能是一个目录/文件冲突？"
+msgstr "：可能是目录/文件冲突？"
 
 #: merge-recursive.c:915
 #, c-format
@@ -5259,7 +5258,7 @@ msgstr "目录/文件"
 #: merge-recursive.c:3420
 #, c-format
 msgid "CONFLICT (%s): There is a directory with name %s in %s. Adding %s as %s"
-msgstr "冲突（%1$s）：在 %3$s 中有一个名为 %2$s 的目录。以 %5$s 为名添加 %4$s"
+msgstr "冲突（%1$s）：在 %3$s 中有名为 %2$s 的目录。以 %5$s 为名添加 %4$s"
 
 #: merge-recursive.c:3429
 #, c-format
@@ -5546,8 +5545,8 @@ msgid ""
 "commit/abort the previous merge before you start a new notes merge."
 msgstr ""
 "您的前一次注释合并尚未结束（存在 %s）。\n"
-"在开始一个新的注释合并之前，请使用 'git notes merge --commit' 或者 'git "
-"notes merge --abort' 来提交/终止前一次合并。"
+"在开始新的注释合并之前，请使用 'git notes merge --commit' 或者 'git notes "
+"merge --abort' 来提交/终止前一次合并。"
 
 #: notes-merge.c:284
 #, c-format
@@ -5617,17 +5616,17 @@ msgstr "路径 '%s' 不存在"
 #: object-file.c:722
 #, c-format
 msgid "reference repository '%s' as a linked checkout is not supported yet."
-msgstr "尚不支持将参考仓库 '%s' 作为一个链接检出。"
+msgstr "尚不支持将参考仓库 '%s' 作为链接检出。"
 
 #: object-file.c:728
 #, c-format
 msgid "reference repository '%s' is not a local repository."
-msgstr "参考仓库 '%s' 不是一个本地仓库。"
+msgstr "参考仓库 '%s' 不是本地仓库。"
 
 #: object-file.c:734
 #, c-format
 msgid "reference repository '%s' is shallow"
-msgstr "参考仓库 '%s' 是一个浅克隆"
+msgstr "参考仓库 '%s' 是浅克隆"
 
 #: object-file.c:742
 #, c-format
@@ -6087,7 +6086,7 @@ msgstr "%s 不可用"
 #: parse-options.c:237
 #, c-format
 msgid "%s expects a non-negative integer value with an optional k/m/g suffix"
-msgstr "%s 期望一个非负整数和一个可选的 k/m/g 后缀"
+msgstr "%s 期望一个非负整数和可选的 k/m/g 后缀"
 
 #: parse-options.c:393
 #, c-format
@@ -6339,7 +6338,7 @@ msgstr "promisor 远程名称不能以 '/' 开始：%s"
 
 #: protocol-caps.c:103
 msgid "object-info: expected flush after arguments"
-msgstr "object-info：在参数之后应有一个 flush"
+msgstr "object-info：在参数之后应有 flush"
 
 #: prune-packed.c:35
 msgid "Removing duplicate objects"
@@ -6400,7 +6399,7 @@ msgstr "%s：只能添加常规文件、符号链接或 git 目录"
 #: read-cache.c:753 builtin/submodule--helper.c:3241
 #, c-format
 msgid "'%s' does not have a commit checked out"
-msgstr "'%s' 没有检出一个提交"
+msgstr "'%s' 没有检出的提交"
 
 #: read-cache.c:805
 #, c-format
@@ -6641,7 +6640,7 @@ msgstr ""
 "l, label <label> = 为当前 HEAD 打上标记\n"
 "t, reset <label> = 重置 HEAD 到该标记\n"
 "m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]\n"
-".       创建一个合并提交，并使用原始的合并提交说明（如果没有指定\n"
+".       创建合并提交，并使用原始的合并提交说明（如果没有指定\n"
 ".       原始提交，使用注释部分的 oneline 作为提交说明）。使用\n"
 ".       -c <提交> 可以编辑提交说明。\n"
 "\n"
